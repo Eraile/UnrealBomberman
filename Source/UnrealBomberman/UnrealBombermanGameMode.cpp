@@ -3,6 +3,7 @@
 #include "UnrealBombermanGameMode.h"
 #include "UnrealBombermanCharacter.h"
 #include "UObject/ConstructorHelpers.h"
+#include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"
 
 AUnrealBombermanGameMode::AUnrealBombermanGameMode()
 {
@@ -11,5 +12,13 @@ AUnrealBombermanGameMode::AUnrealBombermanGameMode()
 	if (PlayerPawnBPClass.Class != NULL)
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
+	}
+}
+
+void AUnrealBombermanGameMode::BeginPlay()
+{
+	for (int playerID = 0; playerID < 2; playerID++)
+	{
+		UGameplayStatics::CreatePlayer(GetWorld(), playerID, true);
 	}
 }

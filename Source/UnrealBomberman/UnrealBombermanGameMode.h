@@ -13,6 +13,7 @@ class AUnrealBombermanGameMode : public AGameModeBase
 
 public:
 	AUnrealBombermanGameMode();
+	virtual void BeginPlay() override;
 };
 
 
