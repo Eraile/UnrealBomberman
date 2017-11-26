@@ -17,8 +17,9 @@ AUnrealBombermanGameMode::AUnrealBombermanGameMode()
 
 void AUnrealBombermanGameMode::BeginPlay()
 {
-	for (int playerID = 0; playerID < 2; playerID++)
-	{
-		UGameplayStatics::CreatePlayer(GetWorld(), playerID, true);
-	}
+	//// Spawn 2 players
+	//for (int playerID = 0; playerID < 2; playerID++)
+	//{
+	//	UGameplayStatics::CreatePlayer(GetWorld(), playerID, true);
+	//}
 }
